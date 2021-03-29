@@ -1,0 +1,15 @@
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\bin\Debug\Caffe_Manager.exe.config
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\bin\Debug\Caffe_Manager.exe
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\bin\Debug\Caffe_Manager.pdb
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.csprojAssemblyReference.cache
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.SelectFrm.resources
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.Properties.Resources.resources
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.csproj.GenerateResource.cache
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.csproj.CoreCompileInputs.cache
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.exe
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.pdb
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.ManagerFrm1.resources
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.CustomerTH.resources
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.CustomerOrder.resources
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.CustomerOrderList.resources
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.finishFrm.resources

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Caffe_Manager
 {
-    public partial class Main : Form
+    public partial class CustomerOrderList : Form
     {
-        public Main()
+        public CustomerOrderList()
         {
             InitializeComponent();
         }
