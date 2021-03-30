@@ -46,61 +46,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="finishFrm.cs">
+    <Compile Include="C_membership.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="finishFrm.Designer.cs">
-      <DependentUpon>finishFrm.cs</DependentUpon>
+    <Compile Include="C_membership.Designer.cs">
+      <DependentUpon>C_membership.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerOrderList.cs">
+    <Compile Include="C_menu_detail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerOrderList.Designer.cs">
-      <DependentUpon>CustomerOrderList.cs</DependentUpon>
+    <Compile Include="C_menu_detail.Designer.cs">
+      <DependentUpon>C_menu_detail.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerTH.cs">
+    <Compile Include="C_finish.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerTH.Designer.cs">
-      <DependentUpon>CustomerTH.cs</DependentUpon>
+    <Compile Include="C_finish.Designer.cs">
+      <DependentUpon>C_finish.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerOrder.cs">
+    <Compile Include="C_orderlist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerOrder.Designer.cs">
-      <DependentUpon>CustomerOrder.cs</DependentUpon>
+    <Compile Include="C_orderlist.Designer.cs">
+      <DependentUpon>C_orderlist.cs</DependentUpon>
     </Compile>
-    <Compile Include="SelectFrm.cs">
+    <Compile Include="C_pay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectFrm.Designer.cs">
-      <DependentUpon>SelectFrm.cs</DependentUpon>
+    <Compile Include="C_pay.Designer.cs">
+      <DependentUpon>C_pay.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerFrm1.cs">
+    <Compile Include="C_takeout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerFrm1.Designer.cs">
-      <DependentUpon>ManagerFrm1.cs</DependentUpon>
+    <Compile Include="C_takeout.Designer.cs">
+      <DependentUpon>C_takeout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C_order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_order.Designer.cs">
+      <DependentUpon>C_order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Select.Designer.cs">
+      <DependentUpon>Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F.Designer.cs">
+      <DependentUpon>F.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="finishFrm.resx">
-      <DependentUpon>finishFrm.cs</DependentUpon>
+    <EmbeddedResource Include="C_finish.resx">
+      <DependentUpon>C_finish.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerOrderList.resx">
-      <DependentUpon>CustomerOrderList.cs</DependentUpon>
+    <EmbeddedResource Include="C_membership.resx">
+      <DependentUpon>C_membership.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerTH.resx">
-      <DependentUpon>CustomerTH.cs</DependentUpon>
+    <EmbeddedResource Include="C_menu_detail.resx">
+      <DependentUpon>C_menu_detail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerOrder.resx">
-      <DependentUpon>CustomerOrder.cs</DependentUpon>
+    <EmbeddedResource Include="C_orderlist.resx">
+      <DependentUpon>C_orderlist.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerFrm1.resx">
-      <DependentUpon>ManagerFrm1.cs</DependentUpon>
+    <EmbeddedResource Include="C_pay.resx">
+      <DependentUpon>C_pay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectFrm.resx">
-      <DependentUpon>SelectFrm.cs</DependentUpon>
+    <EmbeddedResource Include="C_takeout.resx">
+      <DependentUpon>C_takeout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C_order.resx">
+      <DependentUpon>C_order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F.resx">
+      <DependentUpon>F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Select.resx">
+      <DependentUpon>Select.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

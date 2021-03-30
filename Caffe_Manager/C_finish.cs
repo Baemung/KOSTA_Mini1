@@ -10,12 +10,18 @@ using System.Windows.Forms;
 
 namespace Caffe_Manager
 {
-    public partial class finishFrm : Form
+    public partial class C_finish : Form
     {
-        public finishFrm(string str)
+        public C_finish(string str)
         {
             InitializeComponent();
             lb.Text = str;
+            if(str == "주문이 취소되었습니다.")
+            {
+                lbD.Text = ""; lbDelay.Text = "";
+                lbOn.Text = ""; lbOrdernumber.Text = "";
+                lbP.Text = ""; lbPrice.Text = "";
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace Caffe_Manager
 {
-    partial class ManagerFrm1
+    partial class F
     {
         /// <summary>
         /// Required designer variable.

@@ -16,7 +16,7 @@ namespace Caffe_Manager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SelectFrm());
+            Application.Run(new Select());
         }
     }
 }

@@ -10,34 +10,45 @@ using System.Windows.Forms;
 
 namespace Caffe_Manager
 {
-    public partial class CustomerOrder : Form
+    public partial class C_order : Form
     {
-        public CustomerOrder()
+        public C_order()
         {
             InitializeComponent();
         }
 
         private void btn_Payment_Click(object sender, EventArgs e)
         {
-            CustomerOrderList col = new CustomerOrderList();
+            int len = sender.ToString().Split(' ').Length;
+            string method = sender.ToString().Split(' ')[len - 1];
+
+            C_orderlist col = new C_orderlist(method);
 
             if(col.ShowDialog() == DialogResult.Cancel)
             {
-                finishFrm cf = new finishFrm("주문이 취소되었습니다.");
+                C_finish cf = new C_finish("주문이 취소되었습니다.");
                 cf.ShowDialog();
             }
             else
             {
-                finishFrm cf = new finishFrm("주문이 완료되었습니다.");
-                cf.ShowDialog();
                 this.Close();
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            finishFrm cf = new finishFrm("주문이 취소되었습니다.");
+            C_finish cf = new C_finish("주문이 취소되었습니다.");
             if (cf.ShowDialog() != DialogResult.Cancel) return;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            C_menu_detail md = new C_menu_detail();
+            if(md.ShowDialog() == DialogResult.OK)
+            {
+                ListViewItem lv = new ListViewItem(americano.AccessibleName);
+                list_order.Items.Add(lv);
+            }
         }
     }
 }

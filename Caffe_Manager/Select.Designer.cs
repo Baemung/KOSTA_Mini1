@@ -1,7 +1,7 @@
 ﻿
 namespace Caffe_Manager
 {
-    partial class SelectFrm
+    partial class Select
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.

@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace Caffe_Manager
 {
-    public partial class ManagerFrm1 : Form
+    public partial class C_orderlist : Form
     {
-        public ManagerFrm1()
+        string method;
+        public C_orderlist(string str)
         {
             InitializeComponent();
+            method = str;
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            C_pay cp = new C_pay(method);
+            cp.ShowDialog();
         }
     }
 }

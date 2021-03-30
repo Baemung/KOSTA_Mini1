@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Caffe_Manager
 {
-    public partial class CustomerTH : Form
+    public partial class C_takeout : Form
     {
         public bool is_Takeout = false;
 
-        public CustomerTH()
+        public C_takeout()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace Caffe_Manager
             if (sender.ToString().Split(' ')[len - 1] == "테이크아웃") is_Takeout = true;
             else is_Takeout = false;
 
-            CustomerOrder co = new CustomerOrder();
+            C_order co = new C_order();
             co.ShowDialog();
         }
     }
