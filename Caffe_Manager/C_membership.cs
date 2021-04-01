@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,19 @@ namespace Caffe_Manager
 {
     public partial class C_membership : Form
     {
+        string db = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\anvo9\KOSTA_Project\Caffe_Manager\Caffe_Manager.mdf;Integrated Security = True; Connect Timeout = 30";
         string member_number = "010";
-        bool is_member;
-
-        public C_membership()
+        int point;
+        SqlConnection conn = new SqlConnection();
+        SqlCommand cmd = new SqlCommand();
+        public C_membership(int price)
         {
             InitializeComponent();
+            
+            conn.ConnectionString = db;
+            conn.Open();
+            cmd.Connection = conn;
+            point = (int)Math.Round(price * 0.05,0);
         }
 
         private void btn_Click(object sender, EventArgs e)
@@ -93,21 +101,39 @@ namespace Caffe_Manager
             int len = sender.ToString().Split(' ').Length;
             string mem = sender.ToString().Split(' ')[len - 1];
 
-            if (mem == "확인" && member_number.Length != 11)
+            if (mem == "확인")
             {
-                MessageBox.Show("멤버십 번호를 올바르게 입력 해주세요.", "멤버십 번호 오류");
-            }
-            else if (mem == "확인" && member_number.Length == 11)
-            {
-                is_member = true;
                 C_finish cf = new C_finish("주문이 완료되었습니다.");
+                try
+                {
+                    string sql = $"insert into memberinfo values (N'{member_number}',{point})";
+                    cmd.CommandText = sql;
+                    cmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    string sql = $"update memberinfo set point = point + {point} where phone = N'{member_number}'";
+                    cmd.CommandText = sql;
+                    cmd.ExecuteNonQuery();
+                }
                 cf.ShowDialog();
             }
             else if (mem == "취소")
             {
-                is_member = false;
                 C_finish cf = new C_finish("주문이 완료되었습니다.");
                 cf.ShowDialog();
+            }
+        }
+
+        private void tbNumber_TextChanged(object sender, EventArgs e)
+        {
+            if(member_number.Length == 11)
+            {
+                btnOK.Enabled = true;
+            }
+            else
+            {
+                btnOK.Enabled = false;
             }
         }
     }

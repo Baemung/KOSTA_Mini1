@@ -1,7 +1,6 @@
 C:\Users\anvo9\KOSTA_Project\Caffe_Manager\bin\Debug\Caffe_Manager.exe.config
 C:\Users\anvo9\KOSTA_Project\Caffe_Manager\bin\Debug\Caffe_Manager.exe
 C:\Users\anvo9\KOSTA_Project\Caffe_Manager\bin\Debug\Caffe_Manager.pdb
-C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.csprojAssemblyReference.cache
 C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.Properties.Resources.resources
 C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.csproj.GenerateResource.cache
 C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.csproj.CoreCompileInputs.cache
@@ -12,7 +11,11 @@ C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.C_menu_detail
 C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.C_orderlist.resources
 C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.C_takeout.resources
 C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.C_order.resources
-C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.F.resources
 C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.Select.resources
 C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.C_membership.resources
 C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.C_pay.resources
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.csprojAssemblyReference.cache
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.M_First.resources
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.M_InvenAdd.resources
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.M_RegistP.resources
+C:\Users\anvo9\KOSTA_Project\Caffe_Manager\obj\Debug\Caffe_Manager.C_pay_sign.resources

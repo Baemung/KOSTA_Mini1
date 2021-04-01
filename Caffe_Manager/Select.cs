@@ -27,7 +27,7 @@ namespace Caffe_Manager
         private void btnM_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            F mf = new F();
+            M_First mf = new M_First();
             mf.ShowDialog();
         }
     }

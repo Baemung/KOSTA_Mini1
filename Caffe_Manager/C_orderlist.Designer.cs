@@ -35,6 +35,10 @@ namespace Caffe_Manager
             this.lbPrice = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.listView = new System.Windows.Forms.ListView();
+            this.menu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.size = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.count = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -61,7 +65,7 @@ namespace Caffe_Manager
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(199, 392);
+            this.label3.Location = new System.Drawing.Point(189, 392);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 21);
             this.label3.TabIndex = 0;
@@ -71,7 +75,7 @@ namespace Caffe_Manager
             // 
             this.lbPrice.AutoSize = true;
             this.lbPrice.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbPrice.Location = new System.Drawing.Point(355, 392);
+            this.lbPrice.Location = new System.Drawing.Point(328, 392);
             this.lbPrice.Name = "lbPrice";
             this.lbPrice.Size = new System.Drawing.Size(19, 21);
             this.lbPrice.TabIndex = 1;
@@ -90,12 +94,40 @@ namespace Caffe_Manager
             // 
             // listView
             // 
+            this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.menu,
+            this.size,
+            this.count,
+            this.price});
             this.listView.HideSelection = false;
             this.listView.Location = new System.Drawing.Point(-2, -2);
             this.listView.Name = "listView";
             this.listView.Size = new System.Drawing.Size(391, 377);
             this.listView.TabIndex = 3;
             this.listView.UseCompatibleStateImageBehavior = false;
+            // 
+            // menu
+            // 
+            this.menu.Text = "메뉴";
+            this.menu.Width = 180;
+            // 
+            // size
+            // 
+            this.size.Text = "사이즈";
+            this.size.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.size.Width = 80;
+            // 
+            // count
+            // 
+            this.count.Text = "수량";
+            this.count.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.count.Width = 50;
+            // 
+            // price
+            // 
+            this.price.Text = "가격";
+            this.price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.price.Width = 100;
             // 
             // C_orderlist
             // 
@@ -112,6 +144,7 @@ namespace Caffe_Manager
             this.Name = "C_orderlist";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "주문리스트";
+            this.Load += new System.EventHandler(this.C_orderlist_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +158,9 @@ namespace Caffe_Manager
         private System.Windows.Forms.Label lbPrice;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.ListView listView;
+        private System.Windows.Forms.ColumnHeader menu;
+        private System.Windows.Forms.ColumnHeader size;
+        private System.Windows.Forms.ColumnHeader count;
+        private System.Windows.Forms.ColumnHeader price;
     }
 }

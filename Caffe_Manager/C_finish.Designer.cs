@@ -37,6 +37,8 @@ namespace Caffe_Manager
             this.lbDelay = new System.Windows.Forms.Label();
             this.lbP = new System.Windows.Forms.Label();
             this.lbPrice = new System.Windows.Forms.Label();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // lb
@@ -120,11 +122,22 @@ namespace Caffe_Manager
             this.lbPrice.TabIndex = 4;
             this.lbPrice.Text = "0";
             // 
+            // dataGrid
+            // 
+            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid.Location = new System.Drawing.Point(380, 24);
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.RowTemplate.Height = 23;
+            this.dataGrid.Size = new System.Drawing.Size(91, 82);
+            this.dataGrid.TabIndex = 5;
+            this.dataGrid.Visible = false;
+            // 
             // C_finish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(508, 314);
+            this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.lbDelay);
             this.Controls.Add(this.lbOrdernumber);
@@ -137,6 +150,7 @@ namespace Caffe_Manager
             this.Name = "C_finish";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "cancelFrm";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,5 +166,6 @@ namespace Caffe_Manager
         private System.Windows.Forms.Label lbDelay;
         private System.Windows.Forms.Label lbP;
         private System.Windows.Forms.Label lbPrice;
+        private System.Windows.Forms.DataGridView dataGrid;
     }
 }

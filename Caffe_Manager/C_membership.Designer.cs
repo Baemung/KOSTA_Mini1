@@ -78,6 +78,7 @@ namespace Caffe_Manager
             this.tbNumber.TabIndex = 2;
             this.tbNumber.Text = "010";
             this.tbNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbNumber.TextChanged += new System.EventHandler(this.tbNumber_TextChanged);
             // 
             // btn5
             // 
@@ -180,6 +181,8 @@ namespace Caffe_Manager
             // 
             // btnOK
             // 
+            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnOK.Enabled = false;
             this.btnOK.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOK.Location = new System.Drawing.Point(291, 251);
             this.btnOK.Name = "btnOK";

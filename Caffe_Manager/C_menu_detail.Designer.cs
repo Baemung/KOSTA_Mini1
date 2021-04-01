@@ -32,16 +32,17 @@ namespace Caffe_Manager
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbIce = new System.Windows.Forms.RadioButton();
             this.rbHot = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.shotCount = new System.Windows.Forms.DomainUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cntupdown = new System.Windows.Forms.NumericUpDown();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbSizeLarge = new System.Windows.Forms.RadioButton();
             this.rbSizeMedium = new System.Windows.Forms.RadioButton();
             this.rbSizeSmall = new System.Windows.Forms.RadioButton();
             this.btnOK = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cntupdown)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -64,60 +65,56 @@ namespace Caffe_Manager
             this.rbIce.Name = "rbIce";
             this.rbIce.Size = new System.Drawing.Size(173, 25);
             this.rbIce.TabIndex = 0;
-            this.rbIce.TabStop = true;
             this.rbIce.Text = "아이스 (500원 추가)";
             this.rbIce.UseVisualStyleBackColor = true;
             // 
             // rbHot
             // 
             this.rbHot.AutoSize = true;
-            this.rbHot.Checked = true;
             this.rbHot.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbHot.Location = new System.Drawing.Point(29, 32);
             this.rbHot.Name = "rbHot";
             this.rbHot.Size = new System.Drawing.Size(44, 25);
             this.rbHot.TabIndex = 0;
-            this.rbHot.TabStop = true;
             this.rbHot.Text = "핫";
             this.rbHot.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.shotCount);
-            this.groupBox2.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.groupBox2.Location = new System.Drawing.Point(29, 284);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(328, 98);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "샷 추가";
-            // 
-            // shotCount
-            // 
-            this.shotCount.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.shotCount.Items.Add("3");
-            this.shotCount.Items.Add("2");
-            this.shotCount.Items.Add("1");
-            this.shotCount.Items.Add("0");
-            this.shotCount.Location = new System.Drawing.Point(78, 38);
-            this.shotCount.Name = "shotCount";
-            this.shotCount.Size = new System.Drawing.Size(172, 33);
-            this.shotCount.TabIndex = 0;
-            this.shotCount.Text = "0";
-            this.shotCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.rbSizeLarge);
-            this.groupBox3.Controls.Add(this.rbSizeMedium);
-            this.groupBox3.Controls.Add(this.rbSizeSmall);
+            this.groupBox3.Controls.Add(this.cntupdown);
             this.groupBox3.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.groupBox3.Location = new System.Drawing.Point(29, 152);
+            this.groupBox3.Location = new System.Drawing.Point(29, 284);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(328, 96);
+            this.groupBox3.Size = new System.Drawing.Size(328, 98);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "사이즈";
+            this.groupBox3.Text = "수량";
+            // 
+            // cntupdown
+            // 
+            this.cntupdown.Location = new System.Drawing.Point(55, 40);
+            this.cntupdown.Name = "cntupdown";
+            this.cntupdown.Size = new System.Drawing.Size(219, 29);
+            this.cntupdown.TabIndex = 0;
+            this.cntupdown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cntupdown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbSizeLarge);
+            this.groupBox2.Controls.Add(this.rbSizeMedium);
+            this.groupBox2.Controls.Add(this.rbSizeSmall);
+            this.groupBox2.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.groupBox2.Location = new System.Drawing.Point(29, 152);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(328, 96);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "사이즈";
             // 
             // rbSizeLarge
             // 
@@ -127,20 +124,17 @@ namespace Caffe_Manager
             this.rbSizeLarge.Name = "rbSizeLarge";
             this.rbSizeLarge.Size = new System.Drawing.Size(69, 25);
             this.rbSizeLarge.TabIndex = 0;
-            this.rbSizeLarge.TabStop = true;
             this.rbSizeLarge.Text = "Large";
             this.rbSizeLarge.UseVisualStyleBackColor = true;
             // 
             // rbSizeMedium
             // 
             this.rbSizeMedium.AutoSize = true;
-            this.rbSizeMedium.Checked = true;
             this.rbSizeMedium.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.rbSizeMedium.Location = new System.Drawing.Point(123, 40);
             this.rbSizeMedium.Name = "rbSizeMedium";
             this.rbSizeMedium.Size = new System.Drawing.Size(89, 25);
             this.rbSizeMedium.TabIndex = 0;
-            this.rbSizeMedium.TabStop = true;
             this.rbSizeMedium.Text = "Medium";
             this.rbSizeMedium.UseVisualStyleBackColor = true;
             // 
@@ -152,7 +146,6 @@ namespace Caffe_Manager
             this.rbSizeSmall.Name = "rbSizeSmall";
             this.rbSizeSmall.Size = new System.Drawing.Size(67, 25);
             this.rbSizeSmall.TabIndex = 0;
-            this.rbSizeSmall.TabStop = true;
             this.rbSizeSmall.Text = "Small";
             this.rbSizeSmall.UseVisualStyleBackColor = true;
             // 
@@ -166,6 +159,7 @@ namespace Caffe_Manager
             this.btnOK.TabIndex = 4;
             this.btnOK.Text = "확인";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // C_menu_detail
             // 
@@ -173,18 +167,20 @@ namespace Caffe_Manager
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 487);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "C_menu_detail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "옵션 선택";
+            this.Load += new System.EventHandler(this.C_menu_detail_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cntupdown)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -192,14 +188,14 @@ namespace Caffe_Manager
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DomainUpDown shotCount;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rbIce;
         private System.Windows.Forms.RadioButton rbHot;
         private System.Windows.Forms.RadioButton rbSizeLarge;
         private System.Windows.Forms.RadioButton rbSizeMedium;
         private System.Windows.Forms.RadioButton rbSizeSmall;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.NumericUpDown cntupdown;
     }
 }

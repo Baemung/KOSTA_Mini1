@@ -76,6 +76,12 @@
     <Compile Include="C_pay.Designer.cs">
       <DependentUpon>C_pay.cs</DependentUpon>
     </Compile>
+    <Compile Include="C_pay_sign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_pay_sign.designer.cs">
+      <DependentUpon>C_pay_sign.cs</DependentUpon>
+    </Compile>
     <Compile Include="C_takeout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,17 +94,29 @@
     <Compile Include="C_order.Designer.cs">
       <DependentUpon>C_order.cs</DependentUpon>
     </Compile>
+    <Compile Include="M_RegistP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="M_RegistP.Designer.cs">
+      <DependentUpon>M_RegistP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="M_First.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="M_First.Designer.cs">
+      <DependentUpon>M_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="M_InvenAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="M_InvenAdd.Designer.cs">
+      <DependentUpon>M_InvenAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Select.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Select.Designer.cs">
       <DependentUpon>Select.cs</DependentUpon>
-    </Compile>
-    <Compile Include="F.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="F.Designer.cs">
-      <DependentUpon>F.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,14 +135,23 @@
     <EmbeddedResource Include="C_pay.resx">
       <DependentUpon>C_pay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="C_pay_sign.resx">
+      <DependentUpon>C_pay_sign.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="C_takeout.resx">
       <DependentUpon>C_takeout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="C_order.resx">
       <DependentUpon>C_order.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F.resx">
-      <DependentUpon>F.cs</DependentUpon>
+    <EmbeddedResource Include="M_RegistP.resx">
+      <DependentUpon>M_RegistP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M_First.resx">
+      <DependentUpon>M_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="M_InvenAdd.resx">
+      <DependentUpon>M_InvenAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Select.resx">
       <DependentUpon>Select.cs</DependentUpon>
@@ -138,6 +165,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\M_InvenAdd.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

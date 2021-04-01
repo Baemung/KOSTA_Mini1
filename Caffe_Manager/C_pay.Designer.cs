@@ -31,8 +31,10 @@ namespace Caffe_Manager
         {
             this.lb = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbPrice = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // lb
@@ -49,27 +51,27 @@ namespace Caffe_Manager
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(127, 87);
+            this.label2.Location = new System.Drawing.Point(127, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "결제 금액";
             // 
-            // label3
+            // lbPrice
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(249, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "0";
+            this.lbPrice.AutoSize = true;
+            this.lbPrice.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbPrice.Location = new System.Drawing.Point(249, 99);
+            this.lbPrice.Name = "lbPrice";
+            this.lbPrice.Size = new System.Drawing.Size(19, 21);
+            this.lbPrice.TabIndex = 2;
+            this.lbPrice.Text = "0";
             // 
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnOK.Location = new System.Drawing.Point(155, 141);
+            this.btnOK.Location = new System.Drawing.Point(155, 153);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(113, 46);
             this.btnOK.TabIndex = 3;
@@ -77,19 +79,31 @@ namespace Caffe_Manager
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // dataGrid
+            // 
+            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid.Location = new System.Drawing.Point(332, 12);
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.RowTemplate.Height = 23;
+            this.dataGrid.Size = new System.Drawing.Size(76, 63);
+            this.dataGrid.TabIndex = 4;
+            this.dataGrid.Visible = false;
+            // 
             // C_pay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(420, 241);
+            this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lb);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "C_pay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "결제";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,7 +113,8 @@ namespace Caffe_Manager
 
         private System.Windows.Forms.Label lb;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbPrice;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.DataGridView dataGrid;
     }
 }
