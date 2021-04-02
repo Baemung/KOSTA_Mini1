@@ -49,7 +49,7 @@ namespace Caffe_Manager
                 else if (rbSizeLarge.Checked)
                 {
                     size = "Large";
-                    price += 500;
+                    price += 1000;
                 }
                 else
                 {
@@ -74,7 +74,7 @@ namespace Caffe_Manager
                 else if (rbSizeLarge.Checked)
                 {
                     size = "Large";
-                    price += 500;
+                    price += 1000;
                 }
                 else
                 {
@@ -102,7 +102,7 @@ namespace Caffe_Manager
                     else if (rbSizeLarge.Checked)
                     {
                         size = "Large";
-                        price += 500;
+                        price += 1000;
                     }
                     else
                     {
