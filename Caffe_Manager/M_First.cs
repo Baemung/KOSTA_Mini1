@@ -137,14 +137,13 @@ namespace Caffe_Manager
 
         private void btnServ_Click(object sender, EventArgs e)
         {
-            DataGridViewRow dgvr = dataGrid.SelectedRows[0];
-            if (dgvr.Cells[0].Value != null)
-            {
+            try {
+                DataGridViewRow dgvr = dataGrid.SelectedRows[0];
                 RunSql($"delete from COrderStatus where id = {dgvr.Cells[0].Value} and menu = N'{dgvr.Cells[1].Value}'");
                 MessageBox.Show("서비스 완료", "완료");
                 RunSql($"select * from COrderStatus");
             }
-            else
+            catch
             {
                 MessageBox.Show("주문이 없습니다.", "주문없음");
             }

@@ -39,13 +39,13 @@
             this.M_orderhistory = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.M_sales = new System.Windows.Forms.ToolStripButton();
+            this.M_Membership = new System.Windows.Forms.ToolStripButton();
             this.dataGrid = new System.Windows.Forms.DataGridView();
             this.btn_ia = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnServ = new System.Windows.Forms.Button();
             this.cb_monthlyP = new System.Windows.Forms.ComboBox();
             this.lb_monthlyP = new System.Windows.Forms.Label();
-            this.M_Membership = new System.Windows.Forms.ToolStripButton();
             this.tbMember = new System.Windows.Forms.TextBox();
             this.lbMember = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
@@ -55,6 +55,7 @@
             // toolStrip1
             // 
             this.toolStrip1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OrderStatus,
@@ -143,6 +144,16 @@
             this.M_sales.Text = "매출 관리";
             this.M_sales.Click += new System.EventHandler(this.M_sales_Click);
             // 
+            // M_Membership
+            // 
+            this.M_Membership.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.M_Membership.Image = ((System.Drawing.Image)(resources.GetObject("M_Membership.Image")));
+            this.M_Membership.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.M_Membership.Name = "M_Membership";
+            this.M_Membership.Size = new System.Drawing.Size(100, 25);
+            this.M_Membership.Text = "멤버십 관리";
+            this.M_Membership.Click += new System.EventHandler(this.M_Membership_Click);
+            // 
             // dataGrid
             // 
             this.dataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -209,16 +220,6 @@
             this.lb_monthlyP.TabIndex = 6;
             this.lb_monthlyP.Text = "월별 매출";
             // 
-            // M_Membership
-            // 
-            this.M_Membership.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.M_Membership.Image = ((System.Drawing.Image)(resources.GetObject("M_Membership.Image")));
-            this.M_Membership.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.M_Membership.Name = "M_Membership";
-            this.M_Membership.Size = new System.Drawing.Size(100, 25);
-            this.M_Membership.Text = "멤버십 관리";
-            this.M_Membership.Click += new System.EventHandler(this.M_Membership_Click);
-            // 
             // tbMember
             // 
             this.tbMember.Location = new System.Drawing.Point(385, 662);
@@ -256,7 +257,6 @@
             this.MinimizeBox = false;
             this.Name = "M_First";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "M_First";
             this.Load += new System.EventHandler(this.M_First_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
