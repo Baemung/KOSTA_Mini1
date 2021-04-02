@@ -455,24 +455,26 @@ namespace Caffe_Manager
         {
             string item = ((Control)sender).Tag.ToString();
 
-            C_menu_detail md = new C_menu_detail(item, tabName);
+
+            int price = 0;
+
+            for (int i = 0; i < dataGrid.Rows.Count - 1; i++)
+            {
+                if (dataGrid[1, i].Value.ToString() == item)
+                {
+                    price = Int32.Parse(dataGrid[2, i].Value.ToString());
+                }
+            }
+
+            C_menu_detail md = new C_menu_detail(item, tabName, price);
             if (md.ShowDialog() == DialogResult.Cancel) return;
 
             string size = md.size;
             string is_hot = md.is_hot;
             int cnt = md.cnt;
-            int price = md.price;
+            price = md.result_price;
 
-            for (int i = 0; i < dataGrid.Rows.Count-1; i++)
-            {
-                if(dataGrid[1,i].Value.ToString() == item)
-                {
-                    price += Int32.Parse(dataGrid[2, i].Value.ToString());
-                }
-            }
-            price *= cnt;
-
-            ListViewItem newitem = new ListViewItem(new string[] {$"{item}_{is_hot}", size, cnt.ToString(), price.ToString()});
+            ListViewItem newitem = new ListViewItem(new string[] {$"{item}{is_hot}", size, cnt.ToString(), price.ToString()});
             list_order.Items.Add(newitem);
 
             int cntnum = Int32.Parse(lbCntNum.Text);

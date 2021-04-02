@@ -39,6 +39,8 @@ namespace Caffe_Manager
             this.rbSizeMedium = new System.Windows.Forms.RadioButton();
             this.rbSizeSmall = new System.Windows.Forms.RadioButton();
             this.btnOK = new System.Windows.Forms.Button();
+            this.lbP = new System.Windows.Forms.Label();
+            this.lbPrice = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cntupdown)).BeginInit();
@@ -61,29 +63,31 @@ namespace Caffe_Manager
             // 
             this.rbIce.AutoSize = true;
             this.rbIce.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.rbIce.Location = new System.Drawing.Point(121, 32);
+            this.rbIce.Location = new System.Drawing.Point(178, 36);
             this.rbIce.Name = "rbIce";
-            this.rbIce.Size = new System.Drawing.Size(173, 25);
+            this.rbIce.Size = new System.Drawing.Size(104, 25);
             this.rbIce.TabIndex = 0;
-            this.rbIce.Text = "아이스 (500원 추가)";
+            this.rbIce.Text = "ICE (+500)";
             this.rbIce.UseVisualStyleBackColor = true;
+            this.rbIce.CheckedChanged += new System.EventHandler(this.rbIce_CheckedChanged);
             // 
             // rbHot
             // 
             this.rbHot.AutoSize = true;
             this.rbHot.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbHot.Location = new System.Drawing.Point(29, 32);
+            this.rbHot.Location = new System.Drawing.Point(67, 37);
             this.rbHot.Name = "rbHot";
-            this.rbHot.Size = new System.Drawing.Size(44, 25);
+            this.rbHot.Size = new System.Drawing.Size(61, 25);
             this.rbHot.TabIndex = 0;
-            this.rbHot.Text = "핫";
+            this.rbHot.Text = "HOT";
             this.rbHot.UseVisualStyleBackColor = true;
+            this.rbHot.CheckedChanged += new System.EventHandler(this.rbHot_CheckedChanged);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.cntupdown);
             this.groupBox3.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.groupBox3.Location = new System.Drawing.Point(29, 284);
+            this.groupBox3.Location = new System.Drawing.Point(29, 242);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(328, 98);
             this.groupBox3.TabIndex = 3;
@@ -102,6 +106,7 @@ namespace Caffe_Manager
             0,
             0,
             0});
+            this.cntupdown.ValueChanged += new System.EventHandler(this.cntupdown_ValueChanged);
             // 
             // groupBox2
             // 
@@ -109,7 +114,7 @@ namespace Caffe_Manager
             this.groupBox2.Controls.Add(this.rbSizeMedium);
             this.groupBox2.Controls.Add(this.rbSizeSmall);
             this.groupBox2.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.groupBox2.Location = new System.Drawing.Point(29, 152);
+            this.groupBox2.Location = new System.Drawing.Point(29, 129);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(328, 96);
             this.groupBox2.TabIndex = 3;
@@ -120,34 +125,37 @@ namespace Caffe_Manager
             // 
             this.rbSizeLarge.AutoSize = true;
             this.rbSizeLarge.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbSizeLarge.Location = new System.Drawing.Point(229, 40);
+            this.rbSizeLarge.Location = new System.Drawing.Point(215, 40);
             this.rbSizeLarge.Name = "rbSizeLarge";
-            this.rbSizeLarge.Size = new System.Drawing.Size(69, 25);
+            this.rbSizeLarge.Size = new System.Drawing.Size(99, 25);
             this.rbSizeLarge.TabIndex = 0;
-            this.rbSizeLarge.Text = "Large";
+            this.rbSizeLarge.Text = "L (+1000)";
             this.rbSizeLarge.UseVisualStyleBackColor = true;
+            this.rbSizeLarge.CheckedChanged += new System.EventHandler(this.rbSizeLarge_CheckedChanged);
             // 
             // rbSizeMedium
             // 
             this.rbSizeMedium.AutoSize = true;
             this.rbSizeMedium.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbSizeMedium.Location = new System.Drawing.Point(123, 40);
+            this.rbSizeMedium.Location = new System.Drawing.Point(103, 40);
             this.rbSizeMedium.Name = "rbSizeMedium";
-            this.rbSizeMedium.Size = new System.Drawing.Size(89, 25);
+            this.rbSizeMedium.Size = new System.Drawing.Size(97, 25);
             this.rbSizeMedium.TabIndex = 0;
-            this.rbSizeMedium.Text = "Medium";
+            this.rbSizeMedium.Text = "M (+500)";
             this.rbSizeMedium.UseVisualStyleBackColor = true;
+            this.rbSizeMedium.CheckedChanged += new System.EventHandler(this.rbSizeMedium_CheckedChanged);
             // 
             // rbSizeSmall
             // 
             this.rbSizeSmall.AutoSize = true;
             this.rbSizeSmall.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.rbSizeSmall.Location = new System.Drawing.Point(31, 40);
+            this.rbSizeSmall.Location = new System.Drawing.Point(42, 40);
             this.rbSizeSmall.Name = "rbSizeSmall";
-            this.rbSizeSmall.Size = new System.Drawing.Size(67, 25);
+            this.rbSizeSmall.Size = new System.Drawing.Size(37, 25);
             this.rbSizeSmall.TabIndex = 0;
-            this.rbSizeSmall.Text = "Small";
+            this.rbSizeSmall.Text = "S";
             this.rbSizeSmall.UseVisualStyleBackColor = true;
+            this.rbSizeSmall.CheckedChanged += new System.EventHandler(this.rbSizeSmall_CheckedChanged);
             // 
             // btnOK
             // 
@@ -161,11 +169,33 @@ namespace Caffe_Manager
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
+            // lbP
+            // 
+            this.lbP.AutoSize = true;
+            this.lbP.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbP.Location = new System.Drawing.Point(98, 359);
+            this.lbP.Name = "lbP";
+            this.lbP.Size = new System.Drawing.Size(67, 30);
+            this.lbP.TabIndex = 5;
+            this.lbP.Text = "가격 :";
+            // 
+            // lbPrice
+            // 
+            this.lbPrice.AutoSize = true;
+            this.lbPrice.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbPrice.Location = new System.Drawing.Point(193, 359);
+            this.lbPrice.Name = "lbPrice";
+            this.lbPrice.Size = new System.Drawing.Size(25, 30);
+            this.lbPrice.TabIndex = 5;
+            this.lbPrice.Text = "0";
+            // 
             // C_menu_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 487);
+            this.Controls.Add(this.lbPrice);
+            this.Controls.Add(this.lbP);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
@@ -182,6 +212,7 @@ namespace Caffe_Manager
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -197,5 +228,7 @@ namespace Caffe_Manager
         private System.Windows.Forms.RadioButton rbSizeSmall;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.NumericUpDown cntupdown;
+        private System.Windows.Forms.Label lbP;
+        private System.Windows.Forms.Label lbPrice;
     }
 }

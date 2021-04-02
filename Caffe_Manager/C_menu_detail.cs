@@ -15,106 +15,25 @@ namespace Caffe_Manager
         public string size = "";
         public string is_hot = "";
         public int cnt = 1;
-        public int price = 0;
+        public int Origin_price = 0;
+        public int Hot_price = 0;
+        public int Size_price = 0;
+        public int result_price = 0;
         public string menu;
         public string category;
 
-        public C_menu_detail(string name, string tabname)
+        public C_menu_detail(string name, string tabname, int price)
         {
             InitializeComponent();
             cntupdown.Minimum = 1;
             menu = name;
             category = tabname.Trim();
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            if (!groupBox1.Enabled && !groupBox2.Enabled)
-            {
-                cnt = Int32.Parse(cntupdown.Value.ToString());
-            }
-            else if (rbHot.Checked)
-            {
-                is_hot = "Hot";
-                cnt = Int32.Parse(cntupdown.Value.ToString());
-                if (rbSizeSmall.Checked)
-                {
-                    size = "Small";
-                }
-                else if (rbSizeMedium.Checked)
-                {
-                    size = "Medium";
-                    price += 500;
-                }
-                else if (rbSizeLarge.Checked)
-                {
-                    size = "Large";
-                    price += 1000;
-                }
-                else
-                {
-                    MessageBox.Show("기본옵션으로 선택됩니다. ", "옵션 선택");
-                }
-            }
-            else if (rbIce.Checked)
-            {
-
-                is_hot = "Ice";
-                price += 500;
-                cnt = Int32.Parse(cntupdown.Value.ToString());
-                if (rbSizeSmall.Checked)
-                {
-                    size = "Small";
-                }
-                else if (rbSizeMedium.Checked)
-                {
-                    size = "Medium";
-                    price += 500;
-                }
-                else if (rbSizeLarge.Checked)
-                {
-                    size = "Large";
-                    price += 1000;
-                }
-                else
-                {
-                    MessageBox.Show("기본옵션으로 선택됩니다. ", "옵션 선택");
-                }
-            }
-            else
-            {
-                if (groupBox1.Enabled)
-                {
-                    MessageBox.Show("기본옵션으로 선택됩니다. ", "옵션 선택");
-                }
-                else
-                {
-                    cnt = Int32.Parse(cntupdown.Value.ToString());
-                    if (rbSizeSmall.Checked)
-                    {
-                        size = "Small";
-                    }
-                    else if (rbSizeMedium.Checked)
-                    {
-                        size = "Medium";
-                        price += 500;
-                    }
-                    else if (rbSizeLarge.Checked)
-                    {
-                        size = "Large";
-                        price += 1000;
-                    }
-                    else
-                    {
-                        MessageBox.Show("기본옵션으로 선택됩니다. ", "옵션 선택");
-                    }
-                }
-
-            }
+            Origin_price = price;
         }
 
         private void C_menu_detail_Load(object sender, EventArgs e)
         {
+            lbPrice.Text = Origin_price.ToString();
             groupBox1.Enabled = true;
             groupBox2.Enabled = true;
 
@@ -162,6 +81,55 @@ namespace Caffe_Manager
                 groupBox1.Enabled = false;
                 groupBox2.Enabled = false;
             }
+        }
+
+        private void C_menu_detail_MouseMove(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void rbHot_CheckedChanged(object sender, EventArgs e)
+        {
+            is_hot = "(HOT)";
+            Hot_price = 0;
+            lbPrice.Text = ((Origin_price + Hot_price + Size_price) * cnt).ToString();
+        }
+        private void rbIce_CheckedChanged(object sender, EventArgs e)
+        {
+            is_hot = "(ICE)";
+            Hot_price = 500;
+            lbPrice.Text = ((Origin_price + Hot_price + Size_price) * cnt).ToString();
+        }
+
+        private void rbSizeSmall_CheckedChanged(object sender, EventArgs e)
+        {
+            size = "Small";
+            Size_price = 0;
+            lbPrice.Text = ((Origin_price + Hot_price + Size_price) * cnt).ToString();
+        }
+
+        private void rbSizeMedium_CheckedChanged(object sender, EventArgs e)
+        {
+            size = "Medium";
+            Size_price = 500;
+            lbPrice.Text = ((Origin_price + Hot_price + Size_price) * cnt).ToString();
+        }
+
+        private void rbSizeLarge_CheckedChanged(object sender, EventArgs e)
+        {
+            size = "Large";
+            Size_price = 1000;
+            lbPrice.Text = ((Origin_price + Hot_price + Size_price) * cnt).ToString();
+        }
+
+        private void cntupdown_ValueChanged(object sender, EventArgs e)
+        {
+            cnt = Int32.Parse(cntupdown.Value.ToString());
+            lbPrice.Text = ((Origin_price + Hot_price + Size_price) * cnt).ToString();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            result_price = Int32.Parse(lbPrice.Text);
         }
     }
 }

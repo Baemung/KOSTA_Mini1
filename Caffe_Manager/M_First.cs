@@ -75,6 +75,8 @@ namespace Caffe_Manager
 
         private void OrderStatus_Click(object sender, EventArgs e)
         {
+            lbMember.Visible = true;
+            tbMember.Visible = true;
             lb_monthlyP.Visible = false;
             cb_monthlyP.Visible = false;
             btnServ.Visible = true;
@@ -83,6 +85,8 @@ namespace Caffe_Manager
 
         private void M_Menu_Click(object sender, EventArgs e)
         {
+            lbMember.Visible = true;
+            tbMember.Visible = true;
             lb_monthlyP.Visible = false;
             cb_monthlyP.Visible = false;
             btnServ.Visible = false;
@@ -91,6 +95,8 @@ namespace Caffe_Manager
 
         private void M_orderhistory_Click(object sender, EventArgs e)
         {
+            lbMember.Visible = true;
+            tbMember.Visible = true;
             lb_monthlyP.Visible = false;
             cb_monthlyP.Visible = false;
             btnServ.Visible = false;
@@ -99,6 +105,8 @@ namespace Caffe_Manager
 
         private void M_Inven_Click(object sender, EventArgs e)
         {
+            lbMember.Visible = true;
+            tbMember.Visible = true;
             lb_monthlyP.Visible = false;
             cb_monthlyP.Visible = false;
             btnServ.Visible = false;
@@ -108,6 +116,8 @@ namespace Caffe_Manager
         {
             lb_monthlyP.Visible = true;
             cb_monthlyP.Visible = true;
+            lbMember.Visible = false;
+            tbMember.Visible = false;
             btnServ.Visible = false;
             RunSql($"select * from Profits");
         }
@@ -156,6 +166,27 @@ namespace Caffe_Manager
             ClearGrid();
             string Mdate = cb_monthlyP.SelectedItem.ToString();
             string sql = $"SELECT * from Profits where date like N'{Mdate}%'";
+            RunSql(sql);
+        }
+
+        private void tbMember_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                ClearGrid();
+                string sql = $"SELECT phone, point from memberinfo where phone=N'{tbMember.Text}'";
+                RunSql(sql);
+            }
+        }
+
+        private void M_Membership_Click(object sender, EventArgs e)
+        {
+            lb_monthlyP.Visible = false;
+            cb_monthlyP.Visible = false;
+            lbMember.Visible = true;
+            tbMember.Visible = true;
+            ClearGrid();
+            string sql = $"SELECT phone, point from memberinfo";
             RunSql(sql);
         }
     }

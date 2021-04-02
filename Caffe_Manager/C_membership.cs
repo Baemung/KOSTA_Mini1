@@ -104,15 +104,29 @@ namespace Caffe_Manager
             if (mem == "확인")
             {
                 C_finish cf = new C_finish("주문이 완료되었습니다.");
-                try
+                string sql = $"select number from memberinfo where phone = N'{member_number}'";
+                cmd.CommandText = sql;
+                SqlDataReader sr = cmd.ExecuteReader();
+                for (int i = 0; i < sr.FieldCount; i++)
                 {
-                    string sql = $"insert into memberinfo values (N'{member_number}',{point})";
+                    dataGrid.Columns.Add(sr.GetName(i), sr.GetName(i));
+                }
+                for (int k = 0; sr.Read(); k++)
+                {
+                    object[] oArr = new object[sr.FieldCount];
+                    sr.GetValues(oArr);
+                    dataGrid.Rows.Add(oArr);
+                }
+                sr.Close();
+                if(dataGrid[0,0].Value == null)
+                {
+                    sql = $"insert into memberinfo values (N'{member_number}',{point})";
                     cmd.CommandText = sql;
                     cmd.ExecuteNonQuery();
                 }
-                catch
+                else
                 {
-                    string sql = $"update memberinfo set point = point + {point} where phone = N'{member_number}'";
+                    sql = $"update memberinfo set point = point + {point} where phone = N'{member_number}'";
                     cmd.CommandText = sql;
                     cmd.ExecuteNonQuery();
                 }

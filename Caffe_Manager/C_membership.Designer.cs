@@ -45,6 +45,8 @@ namespace Caffe_Manager
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -226,11 +228,22 @@ namespace Caffe_Manager
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btn_Click);
             // 
+            // dataGrid
+            // 
+            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid.Location = new System.Drawing.Point(471, 28);
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.RowTemplate.Height = 23;
+            this.dataGrid.Size = new System.Drawing.Size(52, 50);
+            this.dataGrid.TabIndex = 4;
+            this.dataGrid.Visible = false;
+            // 
             // C_membership
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(556, 333);
+            this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.tbNumber);
@@ -251,6 +264,7 @@ namespace Caffe_Manager
             this.Name = "C_membership";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "멤버십 적립";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,5 +288,6 @@ namespace Caffe_Manager
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.DataGridView dataGrid;
     }
 }

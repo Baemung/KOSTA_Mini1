@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(M_First));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.OrderStatus = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -44,6 +45,9 @@
             this.btnServ = new System.Windows.Forms.Button();
             this.cb_monthlyP = new System.Windows.Forms.ComboBox();
             this.lb_monthlyP = new System.Windows.Forms.Label();
+            this.M_Membership = new System.Windows.Forms.ToolStripButton();
+            this.tbMember = new System.Windows.Forms.TextBox();
+            this.lbMember = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
@@ -61,80 +65,81 @@
             this.toolStripSeparator1,
             this.M_orderhistory,
             this.toolStripSeparator2,
-            this.M_sales});
+            this.M_sales,
+            this.M_Membership});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(575, 32);
+            this.toolStrip1.Size = new System.Drawing.Size(575, 28);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // OrderStatus
             // 
             this.OrderStatus.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.OrderStatus.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.OrderStatus.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.OrderStatus.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OrderStatus.Name = "OrderStatus";
-            this.OrderStatus.Size = new System.Drawing.Size(99, 29);
+            this.OrderStatus.Size = new System.Drawing.Size(84, 25);
             this.OrderStatus.Text = "주문 현황";
             this.OrderStatus.Click += new System.EventHandler(this.OrderStatus_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 32);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 28);
             // 
             // M_Menu
             // 
             this.M_Menu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.M_Menu.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.M_Menu.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.M_Menu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.M_Menu.Name = "M_Menu";
-            this.M_Menu.Size = new System.Drawing.Size(99, 29);
+            this.M_Menu.Size = new System.Drawing.Size(84, 25);
             this.M_Menu.Text = "메뉴 관리";
             this.M_Menu.Click += new System.EventHandler(this.M_Menu_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 32);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 28);
             // 
             // M_Inven
             // 
             this.M_Inven.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.M_Inven.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.M_Inven.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.M_Inven.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.M_Inven.Name = "M_Inven";
-            this.M_Inven.Size = new System.Drawing.Size(99, 29);
+            this.M_Inven.Size = new System.Drawing.Size(84, 25);
             this.M_Inven.Text = "재고 현황";
             this.M_Inven.Click += new System.EventHandler(this.M_Inven_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 32);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
             // 
             // M_orderhistory
             // 
             this.M_orderhistory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.M_orderhistory.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.M_orderhistory.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.M_orderhistory.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.M_orderhistory.Name = "M_orderhistory";
-            this.M_orderhistory.Size = new System.Drawing.Size(99, 29);
+            this.M_orderhistory.Size = new System.Drawing.Size(84, 25);
             this.M_orderhistory.Text = "발주 내역";
             this.M_orderhistory.Click += new System.EventHandler(this.M_orderhistory_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 32);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 28);
             // 
             // M_sales
             // 
             this.M_sales.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.M_sales.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.M_sales.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.M_sales.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.M_sales.Name = "M_sales";
-            this.M_sales.Size = new System.Drawing.Size(99, 29);
+            this.M_sales.Size = new System.Drawing.Size(84, 25);
             this.M_sales.Text = "매출 관리";
             this.M_sales.Click += new System.EventHandler(this.M_sales_Click);
             // 
@@ -204,12 +209,42 @@
             this.lb_monthlyP.TabIndex = 6;
             this.lb_monthlyP.Text = "월별 매출";
             // 
+            // M_Membership
+            // 
+            this.M_Membership.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.M_Membership.Image = ((System.Drawing.Image)(resources.GetObject("M_Membership.Image")));
+            this.M_Membership.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.M_Membership.Name = "M_Membership";
+            this.M_Membership.Size = new System.Drawing.Size(100, 25);
+            this.M_Membership.Text = "멤버십 관리";
+            this.M_Membership.Click += new System.EventHandler(this.M_Membership_Click);
+            // 
+            // tbMember
+            // 
+            this.tbMember.Location = new System.Drawing.Point(385, 662);
+            this.tbMember.Name = "tbMember";
+            this.tbMember.Size = new System.Drawing.Size(170, 21);
+            this.tbMember.TabIndex = 7;
+            this.tbMember.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbMember_KeyDown);
+            // 
+            // lbMember
+            // 
+            this.lbMember.AutoSize = true;
+            this.lbMember.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbMember.Location = new System.Drawing.Point(296, 660);
+            this.lbMember.Name = "lbMember";
+            this.lbMember.Size = new System.Drawing.Size(80, 21);
+            this.lbMember.TabIndex = 8;
+            this.lbMember.Text = "멤버 검색";
+            // 
             // M_First
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 707);
             this.ControlBox = false;
+            this.Controls.Add(this.lbMember);
+            this.Controls.Add(this.tbMember);
             this.Controls.Add(this.lb_monthlyP);
             this.Controls.Add(this.cb_monthlyP);
             this.Controls.Add(this.btnServ);
@@ -249,5 +284,8 @@
         private System.Windows.Forms.Button btnServ;
         private System.Windows.Forms.ComboBox cb_monthlyP;
         private System.Windows.Forms.Label lb_monthlyP;
+        private System.Windows.Forms.ToolStripButton M_Membership;
+        private System.Windows.Forms.TextBox tbMember;
+        private System.Windows.Forms.Label lbMember;
     }
 }
