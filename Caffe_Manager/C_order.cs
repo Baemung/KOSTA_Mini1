@@ -472,7 +472,7 @@ namespace Caffe_Manager
             }
             price *= cnt;
 
-            ListViewItem newitem = new ListViewItem(new string[] {$"{is_hot} {item}", size, cnt.ToString(), price.ToString()});
+            ListViewItem newitem = new ListViewItem(new string[] {$"{item}_{is_hot}", size, cnt.ToString(), price.ToString()});
             list_order.Items.Add(newitem);
 
             int cntnum = Int32.Parse(lbCntNum.Text);

@@ -29,7 +29,11 @@ namespace Caffe_Manager
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (rbHot.Checked)
+            if (!groupBox1.Enabled && !groupBox2.Enabled)
+            {
+                cnt = Int32.Parse(cntupdown.Value.ToString());
+            }
+            else if (rbHot.Checked)
             {
                 is_hot = "Hot";
                 cnt = Int32.Parse(cntupdown.Value.ToString());
@@ -79,7 +83,33 @@ namespace Caffe_Manager
             }
             else
             {
-                MessageBox.Show("기본옵션으로 선택됩니다. ", "옵션 선택");
+                if (groupBox1.Enabled)
+                {
+                    MessageBox.Show("기본옵션으로 선택됩니다. ", "옵션 선택");
+                }
+                else
+                {
+                    cnt = Int32.Parse(cntupdown.Value.ToString());
+                    if (rbSizeSmall.Checked)
+                    {
+                        size = "Small";
+                    }
+                    else if (rbSizeMedium.Checked)
+                    {
+                        size = "Medium";
+                        price += 500;
+                    }
+                    else if (rbSizeLarge.Checked)
+                    {
+                        size = "Large";
+                        price += 500;
+                    }
+                    else
+                    {
+                        MessageBox.Show("기본옵션으로 선택됩니다. ", "옵션 선택");
+                    }
+                }
+
             }
         }
 

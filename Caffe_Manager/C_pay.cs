@@ -61,11 +61,10 @@ namespace Caffe_Manager
             {
                 dataGrid.Rows.Clear();
                 dataGrid.Columns.Clear();
-                menu = lv3.Items[i].SubItems[0].ToString().Split('{')[1].Trim('}');
-                size = lv3.Items[i].SubItems[1].ToString().Split('{')[1].Trim('}');
+                menu = lv3.Items[i].SubItems[0].ToString().Split('{')[1].Split('_')[0];
+                size = lv3.Items[i].SubItems[1].ToString().Split('{')[1].Split('}')[0];
                 quantity = Int32.Parse(lv3.Items[i].SubItems[2].ToString().Split('{')[1].Trim('}'));
-                string mName = menu.Split(')')[1];
-                cmd = new SqlCommand($"select * from menu where mName = N'{mName}'", conn);
+                cmd = new SqlCommand($"select * from menu where mName = N'{menu}'", conn);
                 SqlDataReader sr = cmd.ExecuteReader();
 
                 for (int j = 0; j < sr.FieldCount; j++)
