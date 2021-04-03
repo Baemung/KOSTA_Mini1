@@ -35,7 +35,7 @@ namespace Caffe_Manager
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (tbName.Text != "" && tbPrice.Text != "" && cbClass.Text != "" && tbDelay.Text != "")
+            if (pb.Image != null && tbName.Text != "" && tbPrice.Text != "" && cbClass.Text != "" && tbDelay.Text != "")
             {
                 mName = tbName.Text;
                 mPrice = Int32.Parse(tbPrice.Text);
