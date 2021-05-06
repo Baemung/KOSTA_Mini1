@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Baemung\\Documents\\KOSTA_Project\\Produce300\\APItoDB\\APItoDB\\APItoDB.csproj": {}
+    "C:\\Users\\anvo9\\KOSTA_Project\\Produce300\\APItoDB\\APItoDB\\APItoDB.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Baemung\\Documents\\KOSTA_Project\\Produce300\\APItoDB\\APItoDB\\APItoDB.csproj": {
+    "C:\\Users\\anvo9\\KOSTA_Project\\Produce300\\APItoDB\\APItoDB\\APItoDB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Baemung\\Documents\\KOSTA_Project\\Produce300\\APItoDB\\APItoDB\\APItoDB.csproj",
+        "projectUniqueName": "C:\\Users\\anvo9\\KOSTA_Project\\Produce300\\APItoDB\\APItoDB\\APItoDB.csproj",
         "projectName": "APItoDB",
-        "projectPath": "C:\\Users\\Baemung\\Documents\\KOSTA_Project\\Produce300\\APItoDB\\APItoDB\\APItoDB.csproj",
-        "packagesPath": "C:\\Users\\Baemung\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Baemung\\Documents\\KOSTA_Project\\Produce300\\APItoDB\\APItoDB\\obj\\",
+        "projectPath": "C:\\Users\\anvo9\\KOSTA_Project\\Produce300\\APItoDB\\APItoDB\\APItoDB.csproj",
+        "packagesPath": "C:\\Users\\anvo9\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anvo9\\KOSTA_Project\\Produce300\\APItoDB\\APItoDB\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Baemung\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\anvo9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,10 +44,6 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Extended.Wpf.Toolkit": {
-              "target": "Package",
-              "version": "[4.0.2, )"
-            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.2, )"
@@ -64,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

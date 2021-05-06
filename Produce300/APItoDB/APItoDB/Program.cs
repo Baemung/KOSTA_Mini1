@@ -6,30 +6,28 @@ using System.Xml;
 using jsLibrary;
 using System.Data.SqlClient;
 using System.Data;
-using Xceed.Wpf.Toolkit;
 
 namespace APItoDB
 {
     class Program
     {
         static HttpClient client = new HttpClient();
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
-            SQLDB db = new SQLDB(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Baemung\Documents\KOSTA\Cs\ASP.NET\miniProject2.mdf;Integrated Security=True;Connect Timeout=30");
+            SQLDB db = new SQLDB(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\anvo9\KOSTA\Cs\ASP.NET\miniProject2.mdf;Integrated Security=True;Connect Timeout=30");
             for (int i = 1; i < 5000; i++)
             {
-                if(db.Get($"select deptCd from MemberCurrState where num = '{i}'") == null)
+                if(db.Get($"select empNm from MemberCurrState where num = '{i}'") == null)
                 {
                     continue;
                 }
-                string dcd = db.Get($"select deptCd from MemberCurrState where num = '{i}'").ToString().Trim();
+                string name = db.Get($"select deptCd from MemberCurrState where num = '{i}'").ToString().Trim();
 
-                string url = "http://apis.data.go.kr/9710000/NationalAssemblyInfoService/"; // URL
-                url += "getMemberDetailInfoList";
-                url += "?ServiceKey=" + "3ALdT05j7OIH13Yqz5elfARolLZV9VbO3HL0jtidu7Jdbjn64g%2BTosh%2Bm0zMjXwwHbmRnPCc8lwPc5uU1vgobg%3D%3D"; // Service Key
-                url += $"&dept_cd={dcd}";
+                string url1 = "http://apis.data.go.kr/9710000/NationalAssemblyInfoService/getPressAticle";
+                url1 += "?ServiceKey=3ALdT05j7OIH13Yqz5elfARolLZV9VbO3HL0jtidu7Jdbjn64g%2BTosh%2Bm0zMjXwwHbmRnPCc8lwPc5uU1vgobg%3D%3D"; // Service Key
+                url1 += $"&hg_nm={name}";
 
-                var request = (HttpWebRequest)WebRequest.Create(url);
+                var request = (HttpWebRequest)WebRequest.Create(url1);
                 request.Method = "GET";
 
                 string results = string.Empty;
@@ -45,38 +43,22 @@ namespace APItoDB
                 XmlNodeList xnlist = xml.GetElementsByTagName("item");
                 foreach (XmlNode xn in xnlist)
                 {
-                    string bthDate = "", polyNm = "", shrtNm = "", assemHomep = "", assemTel = "", assemEmail = "", memTitle = "";
+                    string title = "", url = "", regdate = "";
 
-                    if (xn["bthDate"] != null)
+                    if (xn["title"] != null)
                     {
-                        bthDate = xn["bthDate"].InnerText;
+                        title = xn["title"].InnerText;
                     }
-                    if (xn["polyNm"] != null)
+                    if (xn["url"] != null)
                     {
-                        polyNm = xn["polyNm"].InnerText;
+                        url = xn["url"].InnerText;
                     }
-                    if (xn["shrtNm"] != null)
+                    if (xn["regdate"] != null)
                     {
-                        shrtNm = xn["shrtNm"].InnerText;
+                        regdate = xn["regdate"].InnerText;
                     }
-                    if (xn["assemHomep"] != null)
-                    {
-                        assemHomep = xn["assemHomep"].InnerText;
-                    }
-                    if (xn["assemTel"] != null)
-                    {
-                        assemTel = xn["assemTel"].InnerText;
-                    }
-                    if (xn["assemEmail"] != null)
-                    {
-                        assemEmail = xn["assemEmail"].InnerText;
-                    }
-                    if (xn["memTitle"] != null)
-                    {
-                        memTitle = xn["memTitle"].InnerText;
-                    }
-                              
-                    db.Run($"insert into MemberDetailInfo values (N'{bthDate}', N'{polyNm}', N'{shrtNm}', N'{assemHomep}',N'{assemTel}', N'{assemEmail}', N'{memTitle}', N'{dcd}')");
+                    Console.WriteLine(title, url, regdate);        
+                    //db.Run($"insert into MemberDetailInfo values (N'{title}', N'{url}', N'{regdate}', N'{name}')");
                 }
             }
         }
@@ -99,24 +81,20 @@ namespace APItoDB
             //  클래스 함수(메쏘드) 정의 
             public object Run(string sql)
             {
-
+                sqlCmd.CommandText = sql;   // "  select * from fstatus    "
+                if (jslib.GetToken(0, sql.Trim(), ' ').ToUpper() == "SELECT") // "[SELECT] count(*) from fstatus"
                 {
-                    sqlCmd.CommandText = sql;   // "  select * from fstatus    "
-                    if (jslib.GetToken(0, sql.Trim(), ' ').ToUpper() == "SELECT") // "[SELECT] count(*) from fstatus"
-                    {
-                        SqlDataReader sr = sqlCmd.ExecuteReader();
-                        DataTable dt = new DataTable();
-                        dt.Load(sr);
-                        sr.Close();
+                    SqlDataReader sr = sqlCmd.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(sr);
+                    sr.Close();
 
-                        return dt;
-                    }
-                    else
-                    {
-                        return sqlCmd.ExecuteNonQuery();  // insert, update, delete, create, alter 등 조회결과가 없는 SQL문 처리
-                    }
+                    return dt;
                 }
-
+                else
+                {
+                    return sqlCmd.ExecuteNonQuery();  // insert, update, delete, create, alter 등 조회결과가 없는 SQL문 처리
+                }
             }
             public object Get(string sql)   // 단일 필드 데이터 반환
             {
