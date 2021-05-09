@@ -14,24 +14,9 @@ namespace PoliticInform
         protected void Page_Load(object sender, EventArgs e)
         {
         }
-        static string ConnStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Baemung\Documents\KOSTA_Project\Produce300\miniProject2.mdf;Integrated Security=True;Connect Timeout=30";
-        SQLDB db = new SQLDB(ConnStr);
+        SQLDB db = new SQLDB(SiteMaster.ConnStr);
         static bool idcheck = false;
-        //protected void PwdConfirm(object sender, EventArgs e)
-        //{
-        //    string pwd1 = RegisterPassword.Text;
-        //    string pwd2 = ConfirmPassword.Text;
-        //    if (pwd1 == pwd2)
-        //    {
-        //        RegisterPassword.Text = pwd1;
-        //        ConfirmPassword.Text = pwd2;
-        //        Label1.Text = "두 비밀번호가 서로 일치합니다";
-        //    }
-        //    else
-        //    {
-        //        Label1.Text = "두 비밀번호가 일치하는지 다시 확인해주세요.";
-        //    }
-        //}
+
         protected void RegisterUser(object sender, EventArgs e)
         {
             string uid = RegisterID.Text;

@@ -5,7 +5,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server" TextMode="Search">
     
     <h1 style="font-size: xx-large; font-style: normal; font-variant: small-caps">
-        회원가입</h1>
+        &nbsp;회원가입</h1>
     <p>
         아이디
         (6~20자)

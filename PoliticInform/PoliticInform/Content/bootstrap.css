@@ -118,7 +118,7 @@ optgroup,
 select,
 textarea {
   color: inherit;
-  margin: 0 0 23px 0px;
+  margin: 0 0 0px 0px;
 }
 button {
   overflow: visible;
@@ -1113,6 +1113,8 @@ figure {
 }
 img {
   vertical-align: middle;
+    height: 35px;
+    width: 52px;
 }
 .img-responsive,
 .thumbnail > img,
@@ -1287,7 +1289,7 @@ h6,
 }
 p {
   margin: 0 0 10px 21px;
-    height: 347px;
+    height: 43px;
 }
 .lead {
   margin-bottom: 20px;
@@ -1671,6 +1673,9 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+    top: 0px;
+    left: 0px;
+    height: 92px;
 }
 .col-xs-1,
 .col-xs-2,
@@ -2350,6 +2355,7 @@ table {
   background-color: transparent;
     margin-right: 0px;
     margin-left: 0px;
+    margin-top: 0px;
 }
 table col[class*="col-"] {
   position: static;

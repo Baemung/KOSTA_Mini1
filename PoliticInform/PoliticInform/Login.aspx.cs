@@ -17,14 +17,13 @@ namespace PoliticInform
         {
 
         }
-        string ConnStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Baemung\Documents\KOSTA_Project\Produce300\miniProject2.mdf;Integrated Security=True;Connect Timeout=30";
         static public bool isLogin = false;
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             string uid = tbLoginID.Text;
             string pwd = tbLoginPassword.Text;
-            SQLDB db = new SQLDB(ConnStr);
+            SQLDB db = new SQLDB(SiteMaster.ConnStr);
             string sql = $"select password from userinformation where uid='{uid}'";
             if(db.Get(sql) == null) MessageBox.Show("등록되지 않은 사용자입니다.", this.Page);
             else

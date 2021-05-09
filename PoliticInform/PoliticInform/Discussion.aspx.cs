@@ -17,13 +17,12 @@ namespace PoliticInform
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            sds = SqlDataSource1;
+            sds = SqlDataSource;
         }
 
         string sql = "";
         object sds = new object();
-        static string ConnStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Baemung\Documents\KOSTA_Project\Produce300\miniProject2.mdf;Integrated Security=True;Connect Timeout=30";
-        SQLDB db = new SQLDB(ConnStr);
+        SQLDB db = new SQLDB(SiteMaster.ConnStr);
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
@@ -41,7 +40,7 @@ namespace PoliticInform
             if (tbSearch.Text == "")
             {
                 GridView1.DataSourceID = "";
-                sds = SqlDataSource1;
+                sds = SqlDataSource;
                 GridView1.DataSource = sds;
                 GridView1.DataBind();
             }

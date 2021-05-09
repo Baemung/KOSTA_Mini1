@@ -1,11 +1,12 @@
-﻿<%@ Page Title="Member" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Member.aspx.cs" Inherits="PoliticInform.About" %>
+﻿<%@ Page Title="Member" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Member.aspx.cs" Inherits="PoliticInform.Member" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %></h2>
     <p>국회의원의 정보를 확인할 수 있는 회원 페이지입니다. </p>
 
     <p>
-        이름 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox> <asp:Button ID="Button1" runat="server" Text="검색" />
+        이름 <asp:TextBox ID="tbMemberName" runat="server"></asp:TextBox> <asp:Button ID="Button1" runat="server" Text="검색" OnClick="MemberSearch" />
+        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
     </p>
     <p>
         정당 <asp:DropDownList ID="MemberParty" runat="server" EnableTheming="True" Width="180px">
@@ -69,28 +70,13 @@
             <asp:ListItem>정보</asp:ListItem>
         </asp:DropDownList>
     </p>
-    <p>
-        성별 
-        전체 <asp:RadioButton ID="All" runat="server" />남 <asp:RadioButton ID="Male" runat="server" />여<asp:RadioButton ID="Female" runat="server" />
-        
-    </p>
 
-    <p>
-        연령 <asp:DropDownList ID="MemberAge" runat="server" Width="180px">
-            <asp:ListItem>30세 미만</asp:ListItem>
-            <asp:ListItem>31~40세</asp:ListItem>
-            <asp:ListItem>41~50세</asp:ListItem>
-            <asp:ListItem>51~60세</asp:ListItem>
-            <asp:ListItem>61~70세</asp:ListItem>
-            <asp:ListItem>71세 이상</asp:ListItem>
-        </asp:DropDownList>
-    </p>
     <p>
         
         당선횟수 <asp:DropDownList ID="MemberElectedTimes" runat="server" Width="180px">
             <asp:ListItem>전체</asp:ListItem>
-            <asp:ListItem>1선</asp:ListItem>
-            <asp:ListItem>2선</asp:ListItem>
+            <asp:ListItem>초선</asp:ListItem>
+            <asp:ListItem>재선</asp:ListItem>
             <asp:ListItem>3선</asp:ListItem>
             <asp:ListItem>4선</asp:ListItem>
             <asp:ListItem>5선</asp:ListItem>
@@ -99,7 +85,37 @@
         </asp:DropDownList>
     </p>
     <p>
-        <asp:Button ID="MemberConfirm" runat="server" Text="확인" /><asp:Button ID="MemberReset" runat="server" Text="검색초기화" />
+        <asp:Button ID="MemberConfirm" runat="server" Text="확인" OnClick="btnMemberClick" /><asp:Button ID="MemberReset" runat="server" Text="검색초기화" OnClick="MemberReset_Click" />
     </p>
-</asp:Content>
-
+    <p>
+        <asp:DataList ID="DataList1" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataSourceID="SqlDataSource2" ForeColor="Black" GridLines="Both" RepeatColumns="5">
+            <FooterStyle BackColor="#CCCCCC" />
+            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+            <ItemStyle BackColor="White" />
+            <ItemTemplate>
+                <asp:ImageButton CssClass="ourproductPAGE_productImage" ID="jpgLinkImage" runat="server" Height="200px" Width="200px" ImageUrl='<%# Eval("jpgLink") %> ' PostBackUrl='<%# "MemberDetail.aspx?id=" +Eval("deptCd") %>'/>
+                <br />
+                이름:
+                <asp:Label ID="empNmLabel" runat="server" Text='<%# Eval("empNm") %>' />
+                <br />
+                비례대표/선거구:
+                <asp:Label ID="origNmLabel" runat="server" Text='<%# Eval("origNm") %>' />
+                <br />
+                정당:
+                <asp:Label ID="polyNmLabel" runat="server" Text='<%# Eval("polyNm") %>' />
+                <br />
+                소속위원회:
+                <asp:Label ID="shrtNmLabel" runat="server" Text='<%# Eval("shrtNm") %>' />
+                <br />
+                당선횟수:
+                <asp:Label ID="reeleGbnNmLabel" runat="server" Text='<%# Eval("reeleGbnNm") %>' />
+                <br />
+                <br />
+            </ItemTemplate>
+            <SelectedItemStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+        </asp:DataList>
+    </p>
+    <p>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:miniProject2ConnectionString2 %>" SelectCommand="SELECT [jpgLink], [empNm], [origNm], [polyNm], [deptCd], [shrtNm], [reeleGbnNm] FROM [totalInfo]"></asp:SqlDataSource>
+    </p>
+    </asp:Content>
