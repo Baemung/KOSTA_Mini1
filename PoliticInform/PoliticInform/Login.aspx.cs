@@ -31,6 +31,7 @@ namespace PoliticInform
                 if (db.Get(sql).ToString().Trim() == pwd)
                 {
                     isLogin = true;
+                    Session["uid"] = uid;
                     Response.Redirect("~/Default");
                 }
                 else MessageBox.Show("사용자 ID와 비밀번호가 맞지 않습니다.", this.Page);

@@ -10,6 +10,11 @@
             <asp:Image ID="img" runat="server" Height="500px" ImageAlign="Top" Width="500px" />
             <br />
             <br />
+            <asp:Button ID="btnLike" runat="server" Height="40px" OnClick="btnLike_Click" Text="좋아요" Width="120px" />
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnDislike" runat="server" Height="40px" OnClick="btnDislike_Click" Text="싫어요" Width="120px" />
+            <br />
+            <br />
             <asp:DetailsView ID="dv" runat="server" AutoGenerateRows="False" DataSourceID="SqlDataSource1" Height="200px" style="margin-top: 0px" Width="1200px" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="5px" CellPadding="3" CellSpacing="3" ForeColor="Black">
                 <EditRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
                 <Fields>
@@ -32,6 +37,37 @@
                 <RowStyle BackColor="White" />
             </asp:DetailsView>
             <br />
+            <asp:GridView ID="GridView1" CssClass="Grid" runat="server" OnRowDataBound="OnRowDataBound" OnRowDeleting="OnRowDeleting"  AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="861px" AllowPaging="True" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                <Columns>
+                    <asp:BoundField DataField="uid" HeaderText="ID" SortExpression="uid" >
+                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                    </asp:BoundField>
+
+                    <asp:BoundField DataField="comment" HeaderText="코멘트" SortExpression="comment" >
+                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                    </asp:BoundField>
+
+                    <asp:CommandField ShowDeleteButton="True" ButtonType="Button" >
+                    <HeaderStyle HorizontalAlign="Right" VerticalAlign="Middle" />
+                    <ItemStyle HorizontalAlign="Right" VerticalAlign="Top" />
+                    </asp:CommandField>
+                </Columns>
+                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                <PagerSettings Mode="NumericFirstLast" />
+                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Center" Font-Size="Large" Font-Underline="True" VerticalAlign="Middle" />
+                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                <SortedDescendingHeaderStyle BackColor="#242121" />
+            </asp:GridView>
+            <br />
+            <asp:TextBox ID="tbComment" runat="server" Height="77px" MaxLength="2000" TextMode="MultiLine" Width="836px"></asp:TextBox>
+            <asp:Button ID="btnComment" runat="server" Height="60px" OnClick="btnComment_Click" Text="등록" Width="120px" />
+            <br />
+            <br />
+            <br />
         </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:miniProject2ConnectionString2 %>" SelectCommand="SELECT [jpgLink], [empNm], [hjNm], [engNm], [polyNm], [origNm], [reeleGbnNm], [bthDate], [shrtNm], [assemTel], [assemEmail], [assemHomep], [memTitle] FROM [totalInfo]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:miniProject2ConnectionString2 %>" SelectCommand="SELECT [comment], [uid] FROM [UserComment]"></asp:SqlDataSource>
 </asp:Content>
