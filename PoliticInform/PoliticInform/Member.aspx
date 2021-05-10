@@ -1,11 +1,13 @@
 ﻿<%@ Page Title="Member" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Member.aspx.cs" Inherits="PoliticInform.Member" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %></h2>
-    <p>국회의원의 정보를 확인할 수 있는 회원 페이지입니다. </p>
-
+    <br />
+    <br />
+    <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="XX-Large" Text="국회의원 검색"></asp:Label>
+    <br />
+    <br />
     <p>
-        이름 <asp:TextBox ID="tbMemberName" runat="server"></asp:TextBox> <asp:Button ID="Button1" runat="server" Text="검색" OnClick="MemberSearch" />
+        이름 <asp:TextBox ID="tbMemberName" runat="server"></asp:TextBox> &nbsp;&nbsp;&nbsp; <asp:Button ID="Button1" runat="server" Text="검색" OnClick="MemberSearch" Height="30px" Width="90px" />
         <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
     </p>
     <p>
@@ -85,7 +87,7 @@
         </asp:DropDownList>
     </p>
     <p>
-        <asp:Button ID="MemberConfirm" runat="server" Text="확인" OnClick="btnMemberClick" /><asp:Button ID="MemberReset" runat="server" Text="검색초기화" OnClick="MemberReset_Click" />
+        <asp:Button ID="MemberConfirm" runat="server" Text="확인" OnClick="btnMemberClick" Height="30px" Width="120px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Button ID="MemberReset" runat="server" Text="검색초기화" OnClick="MemberReset_Click" Height="30px" Width="150px" />
     </p>
     <p>
         <asp:DataList ID="DataList1" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataSourceID="SqlDataSource2" ForeColor="Black" GridLines="Both" RepeatColumns="5">
@@ -116,6 +118,6 @@
         </asp:DataList>
     </p>
     <p>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:miniProject2ConnectionString2 %>" SelectCommand="SELECT [jpgLink], [empNm], [origNm], [polyNm], [deptCd], [shrtNm], [reeleGbnNm] FROM [totalInfo]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:miniProject2ConnectionString3 %>" SelectCommand="SELECT [jpgLink], [empNm], [origNm], [polyNm], [deptCd], [shrtNm], [reeleGbnNm] FROM [totalInfo]"></asp:SqlDataSource>
     </p>
     </asp:Content>

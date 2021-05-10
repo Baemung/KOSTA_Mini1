@@ -25,16 +25,18 @@ namespace PoliticInform
             string pwd = tbLoginPassword.Text;
             SQLDB db = new SQLDB(SiteMaster.ConnStr);
             string sql = $"select password from userinformation where uid='{uid}'";
-            if(db.Get(sql) == null) MessageBox.Show("등록되지 않은 사용자입니다.", this.Page);
+            if(db.Get(sql) == null) 
+                MessageBox.Show("등록되지 않은 사용자입니다.", this.Page);
             else
             {
-                if (db.Get(sql).ToString().Trim() == pwd)
+                if (db.Get(sql).ToString().Trim() == Register.GetEncrypt(pwd))
                 {
                     isLogin = true;
                     Session["uid"] = uid;
                     Response.Redirect("~/Default");
                 }
-                else MessageBox.Show("사용자 ID와 비밀번호가 맞지 않습니다.", this.Page);
+                else 
+                    MessageBox.Show("사용자 ID와 비밀번호가 맞지 않습니다.", this.Page);
             }
         }
 

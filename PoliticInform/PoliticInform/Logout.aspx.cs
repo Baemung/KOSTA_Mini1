@@ -15,6 +15,7 @@ namespace PoliticInform
         {
             Login.isLogin = false;
             Session["Login"] = Login.isLogin;
+            Session["uid"] = null;
             Response.Redirect("~/Default");
         }
     }

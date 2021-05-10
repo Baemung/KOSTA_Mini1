@@ -11,7 +11,7 @@ namespace PoliticInform
 {
 
 
-    public partial class Contact
+    public partial class Discussion
     {
 
         /// <summary>

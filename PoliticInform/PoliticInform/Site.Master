@@ -54,12 +54,12 @@
                         <li><a runat="server" href="~/">홈</a></li>
                         <li><a runat="server" href="~/Member">의원</a></li>
                         <li><a runat="server" href="~/Discussion">의안</a></li>
-                        <li><a runat="server" href="~/Meeting">회의</a></li>
                         <li><a runat="server" href="~/Party">정당</a></li>
-                        <li><a runat="server" href="~/Issue">국회 소식</a></li>
+                        <li><a runat="server" href="~/Rank">랭킹</a></li>
                         <%  
                             if((bool)Session["Login"])
-                            {%>
+                            {%>                                 
+                                 <li><a runat="server" ><%: Session["uid"]%>님 반갑습니다.</a></li><li>
                                  <li><a runat="server" href="~/Logout">로그아웃</a></li><li>
                             <%}
                             else
@@ -76,9 +76,15 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - 댓글을 달거나 투표에 참여하고 싶으시면 회원가입을 해주세요. </p>
+                <p>
+
+                </p>
+                <p>
+                    <hr style="color: #000000" />
+
+                </p>
+                <p style="color: #000000; font-family: 나눔바른고딕;">&copy; <%: DateTime.Now.Year %> - 댓글을 달거나 투표에 참여하고 싶으시면 회원가입을 해주세요. </p>
             </footer>
         </div>
 

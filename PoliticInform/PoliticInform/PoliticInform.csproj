@@ -193,11 +193,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Disable_Dislike.png" />
+    <Content Include="Content\Disable_Like.png" />
+    <Content Include="Content\Enable_Dislike.png" />
+    <Content Include="Content\Enable_Like.png" />
+    <Content Include="Content\img.jpg" />
+    <Content Include="Content\img1.jpg" />
     <Content Include="Content\Parties.png" />
-    <Content Include="Issue.aspx" />
+    <Content Include="Rank.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
-    <Content Include="Meeting.aspx" />
     <Content Include="Member.aspx" />
     <Content Include="Discussion.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -250,6 +255,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="Style.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -258,12 +264,12 @@
   <ItemGroup>
     <Compile Include="AppCode\MessageBox.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="Issue.aspx.cs">
-      <DependentUpon>Issue.aspx</DependentUpon>
+    <Compile Include="Rank.aspx.cs">
+      <DependentUpon>Rank.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Issue.aspx.designer.cs">
-      <DependentUpon>Issue.aspx</DependentUpon>
+    <Compile Include="Rank.aspx.designer.cs">
+      <DependentUpon>Rank.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -278,13 +284,6 @@
     </Compile>
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Meeting.aspx.cs">
-      <DependentUpon>Meeting.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Meeting.aspx.designer.cs">
-      <DependentUpon>Meeting.aspx</DependentUpon>
     </Compile>
     <Compile Include="Member.aspx.cs">
       <DependentUpon>Member.aspx</DependentUpon>

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -35,8 +37,11 @@ namespace PoliticInform
             else if (nam == "" || bthDay.Length != 8 || gend == "" || phone.Length != 11 || !mail.Contains("@") || !mail.Contains(".")) MessageBox.Show("회원 정보를 올바르게 입력해주세요.", this.Page);
             else
             {
+                pwd = GetEncrypt(pwd);
                 string sql = $"insert into userinformation values ('{uid}', '{pwd}', N'{nam}', '{bthDay}', N'{gend}', '{phone}', '{mail}')";
                 db.Run(sql);
+                Session["uid"] = uid;
+                Login.isLogin = true;
                 Response.Redirect("~/default");
             }
         }
@@ -53,6 +58,19 @@ namespace PoliticInform
                 idcheck = false;
                 MessageBox.Show("사용 불가능한 ID 입니다.", this.Page);
             }
+        }
+
+        public static string GetEncrypt(string originmsg)
+        {
+            MD5 md = new MD5CryptoServiceProvider();
+            byte[] bArr = md.ComputeHash(Encoding.Default.GetBytes(originmsg));
+            string retS = "";
+            for (int i = 0; i < bArr.Length; i++)
+            {
+                retS += $"{bArr[i]:x2}";
+            }
+
+            return retS;
         }
     }
 }

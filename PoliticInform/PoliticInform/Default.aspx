@@ -1,28 +1,27 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PoliticInform._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
-        <div class="jumbotron">
-    <p aria-atomic="False">환영합니다. 이곳은 국회의원 정보 확인을 위한 페이지입니다. </p>
-    <p class="lead">
-        참여연대 의정감시센터가 만들어 운영하는 국회 모니터링 전문사이트입니다.
-    </p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <link href="Style.css" rel="stylesheet"/>
+    <body >
+<div class="jumbotron"  >
+    <p aria-atomic="False" style="font-family: 나눔바른고딕; font-size: xx-large; font-weight: normal; color: #000000; white-space: nowrap; background-color: #EEEEEE">Open API를 활용한 국회의원 정보열람 시스템입니다.</p>
+    <p style="font-family: 나눔바른고딕; font-size: large">열려라 국회, 우리가 사랑하는 정치인에서 아이디어를 얻었습니다. </p>
+            
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>국회의원 찾기</h2>
-        <p>
-            이름, 정당, 지역, 위원회, 성별, 연령, 당선횟수로 국회의원의 정보를 확인해보세요.
+    <div class="col-md-4" style="color: #000000">
+        <h2 style="font-family: 나눔바른고딕">국회의원 찾기</h2>
+        <p style="font-family: 나눔바른고딕">
+            이름, 정당, 지역, 위원회, 당선횟수로 국회의원의 정보를 확인해보세요.
 
             국회의원의 정보를 찾고 원하는 코멘트를 남기실 수도 있습니다.
         </p>
        
     </div>
-    <div class="col-md-4">
-        <h2>의안 찾기</h2>
-        <p>
+    <div class="col-md-4" style="color: #000000">
+        <h2 style="font-family: 나눔바른고딕">의안 찾기</h2>
+        <p style="font-family: 나눔바른고딕">
             
                 의안을 검색을 통해 쉽게 알아보세요.
 
@@ -30,7 +29,7 @@
         </p>
         
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" style="font-family: 나눔바른고딕; color: #000000;">
         <h2>정당</h2>
         <p>
             정당의 정보를 쉽게 확인해보세요.
@@ -40,4 +39,6 @@
        
     </div>
 </div>
+
+    </body>
 </asp:Content>

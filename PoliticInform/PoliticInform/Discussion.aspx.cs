@@ -13,11 +13,12 @@ using jsLibrary;
 
 namespace PoliticInform
 {
-    public partial class Contact : Page
+    public partial class Discussion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             sds = SqlDataSource;
+            GridView1.Columns[1].ItemStyle.HorizontalAlign = HorizontalAlign.Center;
         }
 
         string sql = "";
@@ -51,6 +52,16 @@ namespace PoliticInform
                 sds = db.Run(sql);
                 GridView1.DataSource = sds;
                 GridView1.DataBind();
+            }
+        }
+
+        protected void gdv_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                var lnk = (HyperLink)e.Row.FindControl("BILL_NAME");
+                lnk.Text = "[상세 링크]";
+                lnk.NavigateUrl = db.Get($"select detail_link from proposition where bill_name = N'{((DataRowView)e.Row.DataItem)["BILL_NAME"].ToString().Trim()}'").ToString().Trim();
             }
         }
     }

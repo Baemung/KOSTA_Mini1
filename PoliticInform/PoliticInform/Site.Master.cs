@@ -17,7 +17,7 @@ namespace PoliticInform
             Session["Login"] = Login.isLogin;
         }
 
-        public static string ConnStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\anvo9\KOSTA_Project\PoliticInform\miniProject2.mdf;Integrated Security=True;Connect Timeout=30";
+        public static string ConnStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Baemung\Documents\KOSTA_Project\PoliticInform\miniProject2.mdf;Integrated Security=True;Connect Timeout=30";
 
         public static Bitmap WebImageView(string URL)
         {

@@ -9,11 +9,31 @@
             <br />
             <asp:Image ID="img" runat="server" Height="500px" ImageAlign="Top" Width="500px" />
             <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
-            <asp:Button ID="btnLike" runat="server" Height="40px" OnClick="btnLike_Click" Text="좋아요" Width="120px" />
-&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnDislike" runat="server" Height="40px" OnClick="btnDislike_Click" Text="싫어요" Width="120px" />
-            <br />
+            <%  
+                    if (Session["uid"] != null)
+                    {%>
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:ImageButton ID="imgbtnLike" runat="server" Height="100px" ImageAlign="Left" ImageUrl="~/Content/Disable_Like.png" OnClick="imgbtnLike_Click" Width="100px" />
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:ImageButton ID="imgbtnDislike" runat="server" Height="100px" ImageUrl="~/Content/Disable_Dislike.png" OnClick="imgbtnDislike_Click" Width="100px" />    
+                    <%}
+                    else
+                    {%>
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:Image ID="Image1" runat="server" Height="100px" ImageAlign="Left" ImageUrl="~/Content/Disable_Like.png" Width="100px" />
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:Image ID="Image2" runat="server" Height="100px" ImageUrl="~/Content/Disable_Dislike.png" Width="100px" />
+                    <%}
+             %>
+                        &nbsp;&nbsp;&nbsp;
+                        <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Label ID="lbLike" runat="server" Font-Size="Large" Text="Label"></asp:Label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Label ID="lbDislike" runat="server" Font-Size="Large" Text="Label"></asp:Label> 
             <br />
             <asp:DetailsView ID="dv" runat="server" AutoGenerateRows="False" DataSourceID="SqlDataSource1" Height="200px" style="margin-top: 0px" Width="1200px" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="5px" CellPadding="3" CellSpacing="3" ForeColor="Black">
                 <EditRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
@@ -63,11 +83,17 @@
                 <SortedDescendingHeaderStyle BackColor="#242121" />
             </asp:GridView>
             <br />
-            <asp:TextBox ID="tbComment" runat="server" Height="77px" MaxLength="2000" TextMode="MultiLine" Width="836px"></asp:TextBox>
-            <asp:Button ID="btnComment" runat="server" Height="60px" OnClick="btnComment_Click" Text="등록" Width="120px" />
+            <%  
+                    if(Session["uid"] != null)
+                    {%>
+                        <asp:TextBox ID="tbComment" runat="server" Height="77px" MaxLength="2000" TextMode="MultiLine" Width="836px"></asp:TextBox>
+                        <asp:Button ID="btnComment" runat="server" Height="60px" OnClick="btnComment_Click" Text="등록" Width="120px" />
+                    <%}
+            %>
+            
             <br />
             <br />
             <br />
         </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:miniProject2ConnectionString2 %>" SelectCommand="SELECT [comment], [uid] FROM [UserComment]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:miniProject2ConnectionString3 %>" SelectCommand="SELECT [comment], [uid] FROM [UserComment]"></asp:SqlDataSource>
 </asp:Content>
