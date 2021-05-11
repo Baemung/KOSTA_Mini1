@@ -13,7 +13,7 @@ namespace Caffe_Manager
 {
     public partial class C_membership : Form
     {
-        string db = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\anvo9\KOSTA_Project\Caffe_Manager\Caffe_Manager.mdf;Integrated Security = True; Connect Timeout = 30";
+        string db = Program.db; 
         string member_number = "010";
         int point;
         SqlConnection conn = new SqlConnection();

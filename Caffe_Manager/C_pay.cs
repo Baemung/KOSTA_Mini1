@@ -18,7 +18,7 @@ namespace Caffe_Manager
         public int ordernumber;
         public string method;
         public bool is_card;
-        string db = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\anvo9\KOSTA_Project\Caffe_Manager\Caffe_Manager.mdf;Integrated Security = True; Connect Timeout = 30"; 
+        string db = Program.db; 
         ListView lv3;
 
         public C_pay(string str, int price, ListView lv2)
@@ -61,7 +61,7 @@ namespace Caffe_Manager
             {
                 dataGrid.Rows.Clear();
                 dataGrid.Columns.Clear();
-                menu = lv3.Items[i].SubItems[0].ToString().Split('{')[1].Split('(')[0];
+                menu = lv3.Items[i].SubItems[0].ToString().Split('{')[1].Split('}')[0];
                 size = lv3.Items[i].SubItems[1].ToString().Split('{')[1].Split('}')[0];
                 quantity = Int32.Parse(lv3.Items[i].SubItems[2].ToString().Split('{')[1].Trim('}'));
                 cmd = new SqlCommand($"select * from menu where mName = N'{menu}'", conn);

@@ -8,6 +8,8 @@ namespace Caffe_Manager
 {
     static class Program
     {
+        public static string db = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Baemung\Documents\KOSTA_Project\Caffe_Manager\Caffe_Manager.mdf;Integrated Security=True;Connect Timeout=30";
+
         /// <summary>
         /// 해당 애플리케이션의 주 진입점입니다.
         /// </summary>

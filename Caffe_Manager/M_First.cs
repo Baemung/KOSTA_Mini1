@@ -26,8 +26,7 @@ namespace Caffe_Manager
         
         SqlConnection sqlConn = new SqlConnection();
         SqlCommand sqlCom = new SqlCommand();
-        string db = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\anvo9\KOSTA_Project\Caffe_Manager\Caffe_Manager.mdf;Integrated Security = True; Connect Timeout = 30";
-        
+        string db = Program.db;
         private void ClearGrid()
         {
             dataGrid.Rows.Clear();

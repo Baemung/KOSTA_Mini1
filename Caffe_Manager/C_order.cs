@@ -224,8 +224,7 @@ namespace Caffe_Manager
 
         }
 
-        string db = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\anvo9\KOSTA_Project\Caffe_Manager\Caffe_Manager.mdf;Integrated Security = True; Connect Timeout = 30";
-        
+        string db = Program.db;
         private void btn_Payment_Click(object sender, EventArgs e)
         {
             if(totalcnt > 0 && totalprice > 0)
